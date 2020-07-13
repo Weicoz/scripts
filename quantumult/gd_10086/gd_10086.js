@@ -1,13 +1,13 @@
 const c = init()
 const headerName = '广东移动'
-const urlKey = 'url_10086'
 const headerKey = 'header_10086'
 const bodyKey = 'body_10086'
+const sessionidKey = 'sessionid_10086'
 
 const signinfo = {}
-let url = c.getdata(urlKey)
-let header = c.getdata(headerKey)
+let header = JSON.parse(c.getdata(headerKey))
 let body = c.getdata(bodyKey).replace('reqJson=', '')
+let sessionid = c.getdata(sessionidKey)
 
 ;(exec = async () => {
     c.log(`🔔 ${headerName} 开始签到`)
@@ -23,8 +23,20 @@ function signapp() {
         reqJson['timestamp'] = new Date().getTime();
         let _body = "reqJson=" + encodeURIComponent(JSON.stringify(reqJson))
         const url = {
-            url: url,
-            headers: JSON.parse(header),
+            url: `https://gd.10086.cn/gmccapp/confactapp/?sessionid=${sessionid}&servicename=GMCCAPP_630_032_001_002`,
+            headers: {
+                'X-Requested-With' : `XMLHttpRequest`,
+                'Connection' : `keep-alive`,
+                'Accept-Encoding' : `gzip, deflate, br`,
+                'Content-Type' : `application/x-www-form-urlencoded; charset=UTF-8`,
+                'Origin' : `https://gd.10086.cn`,
+                'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 GDMobile/7.0.7 gmcchh chinamobile_014655A gmcchh/7.0.7 iOSAmberV2.7.1`,
+                'Cookie' : header.Cookie,
+                'Host' : `gd.10086.cn`,
+                'Referer' : `https://gd.10086.cn/gmccapp/confactpage/sigin/index.html?isApp=0&session=${sessionid}`,
+                'Accept-Language' : `zh-cn`,
+                'Accept' : `text/plain, */*; q=0.01`
+            },
             body: _body
         }
         c.post(url, (error, response, data) => {
@@ -51,10 +63,10 @@ function showmsg() {
     }
     if (signinfo.signapp) {
         subTitle = '签到: 成功'
-        detail = `说明: ${signinfo.signapp.status.msg}`
+        detail = `说明: ${signinfo.signapp.msg}`
     } else {
         subTitle = '签到: 失败'
-        detail = `说明: ${signinfo.signapp}`
+        detail = `说明: ${signinfo.signapp.msg}`
     }
     c.msg(headerName, subTitle, detail)
 }

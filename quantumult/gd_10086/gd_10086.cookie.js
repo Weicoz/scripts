@@ -1,20 +1,41 @@
 
 // ^https:\/\/gd.10086.cn\/gmccapp\/confactapp\/\?sessionid=.* url script-request-header https://raw.githubusercontent.com/Weicoz/scripts/master/quantumult/gd_10086/gd_10086.cookie.js
 const headerName = '广东移动'
-const urlKey = 'url_10086'
 const headerKey = 'header_10086'
 const bodyKey = 'body_10086'
+const sessionidKey = 'sessionid_10086'
 
 const c = init()
-const url = $request.url
 const header = $request.headers
 const body = $request.body
+const sessionid = getQueryString('sessionid')
 
 if (header.Cookie) {
-    if (c.setdata(url, urlKey) && c.setdata(JSON.stringify(header), headerKey) && c.setdata(JSON.stringify(body), bodyKey)) {
+    if (c.setdata(JSON.stringify(header), headerKey) && c.setdata(sessionid, sessionidKey)) {
         c.msg(`${headerName}`, '获取Cookie: 成功', '')
         c.log(`[${headerName}] 获取Cookie: 成功, cookie: ${header.Cookie}`)
     }
+}
+
+if (body){
+    if (c.setdata(JSON.stringify(body), bodyKey)){
+        c.msg(`${headerName}`, '获取body: 成功', '')
+        c.log(`[${headerName}] 获取body: 成功, body: ${body}`)
+    }
+}
+
+
+function getQueryString(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    let s = $request.url.match(new RegExp(/\?.*/))
+    if (s != null) {
+        s = s[0]
+    }
+    let r = s.substr(1).match(reg);
+    if (r != null) {
+        return decodeURIComponent(r[2]);
+    };
+    return null;
 }
 
 function init() {
