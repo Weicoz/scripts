@@ -1,4 +1,5 @@
-// ^https:\/\/gd.10086.cn\/gmccapp\/confactapp\/\?sessionid=.* url script-request-header 10086/10086.cookie.js
+
+// ^https:\/\/gd.10086.cn\/gmccapp\/confactapp\/\?sessionid=.* url script-request-header https://raw.githubusercontent.com/Weicoz/scripts/master/quantumult/gd_10086/gd_10086.cookie.js
 const headerName = '广东移动'
 const urlKey = 'url_10086'
 const headerKey = 'header_10086'
