@@ -1,6 +1,6 @@
-// http:\/\/www.1g31.com\/plugin.php\?id=dsu_paulsign:sign url script-request-header https://raw.githubusercontent.com/Weicoz/scripts/master/quantumult/1g31/1g31.cookie.js
-// 2 1,12 * * * https://raw.githubusercontent.com/Weicoz/scripts/master/quantumult/1g31/1g31.js, tag=1g31签到, enabled=true
-const cookieName = '1g31论坛'
+// https:\/\/www.91wii.com\/plugin.php\?id=dc_signin:sign&inajax=1 url script-request-header https://raw.githubusercontent.com/Weicoz/scripts/master/quantumult/91wii/91wii.cookie.js
+// 2 1,12 * * * https://raw.githubusercontent.com/Weicoz/scripts/master/quantumult/91wii/91wii.js, tag=91wii签到, enabled=true
+const cookieName = '91wii'
 const chavy = init()
 const param = ['Cookie'];
 const data = {};
