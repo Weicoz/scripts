@@ -1,10 +1,10 @@
 const chavy = init()
-const cookieName = '一哥手游'
+const cookieName = '1g31论坛'
 const url = 'http://www.1g31.com/plugin.php?id=dsu_paulsign:sign&operation=qiandao&infloat=1&inajax=1' 
 const host = 'www.1g31.com' 
 const signinfo = {}
 
-var data_json = chavy.getdata('data_json')
+var data_json = chavy.getdata(cookieName + '_header')
 var data = JSON.parse(data_json);
 ;(exec = async () => {
     chavy.log(`🔔 ${cookieName} 开始签到`)

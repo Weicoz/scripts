@@ -12,7 +12,7 @@ for (var item in param){
 }
 var data_json = JSON.stringify(data);
 if (data_json) {
-    if (chavy.setdata(data_json, 'data_json')) {
+    if (chavy.setdata(data_json, cookieName + '_header')) {
         chavy.msg(`${cookieName}`, '获取Cookie成功', '')
         chavy.log(`[${cookieName}] 获取Cookie: 成功 ${data_json}`)
     }

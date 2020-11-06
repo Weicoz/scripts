@@ -4,7 +4,7 @@ const url = 'https://www.91wii.com/plugin.php?id=dc_signin:sign&inajax=1'
 const host = 'www.91wii.com' 
 const signinfo = {}
 
-var data_json = chavy.getdata('data_json')
+var data_json = chavy.getdata(cookieName + '_header')
 var data = JSON.parse(data_json);
 ;(exec = async () => {
     chavy.log(`🔔 ${cookieName} 开始签到`)
