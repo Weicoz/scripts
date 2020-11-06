@@ -39,7 +39,7 @@ function signapp() {
         request.headers['Accept-Encoding'] = `gzip, deflate`
         request.headers['Accept-Language'] = `zh-CN,zh;q=0.9,ja;q=0.8,zh-TW;q=0.7`
         request.headers['Connection'] = `keep-alive`
-        chavy.put(request, (error, response, data) => {
+        chavy.post(request, (error, response, data) => {
             try {
                 signinfo.signapp = data
                 chavy.log(data)
