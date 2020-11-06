@@ -20,7 +20,7 @@ function signapp() {
             url: url,
             headers: data,
             body: {
-                formhash: c202ecbd,
+                formhash: 'c202ecbd',
                 qdmode: 3,
                 todaysay: '',
                 fastreply: 0

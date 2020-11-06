@@ -20,11 +20,11 @@ function signapp() {
             url: url,
             headers: data,
             body: {
-                formhash: c391ea42,
-                signsubmit: yes,
-                handlekey: signin,
+                formhash: 'c391ea42',
+                signsubmit: 'yes',
+                handlekey: 'signin',
                 emotid: 5,
-                referer: https://www.91wii.com/plugin.php?id=dc_signin,
+                referer: 'https://www.91wii.com/plugin.php?id=dc_signin',
                 content: '签到'
             }
         }
