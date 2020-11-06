@@ -5,6 +5,10 @@ const host = 'www.1g31.com'
 const signinfo = {}
 
 var data_json = chavy.getdata(cookieName + '_header')
+if (!data_json){
+    chavy.log(`🔔 ${cookieName} 请获取Cookie后执行`)
+    chavy.done()
+}
 var data = JSON.parse(data_json);
 ;(exec = async () => {
     chavy.log(`🔔 ${cookieName} 开始签到`)
