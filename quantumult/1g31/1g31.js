@@ -36,8 +36,8 @@ function signapp() {
         request.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'
         request.headers['Accept'] = `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9`
         //
-        request.headers['Accept-Encoding'] = `gzip, deflate, br`
-        request.headers['Accept-Language'] = `zh-Hans-CN;q=1`
+        request.headers['Accept-Encoding'] = `gzip, deflate`
+        request.headers['Accept-Language'] = `zh-CN,zh;q=0.9,ja;q=0.8,zh-TW;q=0.7`
         request.headers['Connection'] = `keep-alive`
         chavy.put(request, (error, response, data) => {
             try {
