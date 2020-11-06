@@ -25,6 +25,7 @@ function signapp() {
             headers: data,
             body: {
                 formhash: 'c202ecbd',
+                qdxq: 'shuai',
                 qdmode: 3,
                 todaysay: '',
                 fastreply: 0
