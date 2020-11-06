@@ -18,7 +18,13 @@ function signapp() {
     return new Promise((resolve, reject) => {
         const request = {
             url: url,
-            headers: data
+            headers: data,
+            body: {
+                formhash: c202ecbd,
+                qdmode: 3,
+                todaysay: '',
+                fastreply: 0
+            }
         }
         request.headers['Content-Type'] = `application/x-www-form-urlencoded`
         request.headers['Host'] = host

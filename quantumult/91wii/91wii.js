@@ -18,7 +18,15 @@ function signapp() {
     return new Promise((resolve, reject) => {
         const request = {
             url: url,
-            headers: data
+            headers: data,
+            body: {
+                formhash: c391ea42,
+                signsubmit: yes,
+                handlekey: signin,
+                emotid: 5,
+                referer: https://www.91wii.com/plugin.php?id=dc_signin,
+                content: '签到'
+            }
         }
         request.headers['Content-Type'] = `application/x-www-form-urlencoded`
         request.headers['Host'] = host
