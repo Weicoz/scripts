@@ -24,12 +24,13 @@ function signapp() {
             url: url,
             headers: data,
             body: {
-                formhash: 'c391ea42',
+                formhash: '1c7af356',
                 signsubmit: 'yes',
                 handlekey: 'signin',
-                emotid: 5,
+                emotid: 8,
                 referer: 'https://www.91wii.com/plugin.php?id=dc_signin',
-                content: '签到'
+                content: '签到',
+                signpn: true
             }
         }
         request.headers['Content-Type'] = `application/x-www-form-urlencoded`

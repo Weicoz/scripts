@@ -1,6 +1,6 @@
 const chavy = init()
 const cookieName = '1g31论坛'
-const url = 'http://www.1g31.com/plugin.php?id=dsu_paulsign:sign&operation=qiandao&infloat=1&inajax=1' 
+const url = 'http://www.1g31.com/plugin.php?id=dsu_paulsign:sign&operation=qiandao&infloat=0&inajax=0&mobile=yes' 
 const host = 'www.1g31.com' 
 const signinfo = {}
 
@@ -24,10 +24,10 @@ function signapp() {
             url: url,
             headers: data,
             body: {
-                formhash: 'c202ecbd',
+                formhash: '460853b0',
                 qdxq: 'shuai',
-                qdmode: 3,
-                todaysay: '',
+                qdmode: 1,
+                todaysay: '我来签到啦！！！',
                 fastreply: 0
             }
         }
