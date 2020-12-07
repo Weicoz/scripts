@@ -4,12 +4,14 @@ const url = 'http://www.1g31.com/plugin.php?id=dsu_paulsign:sign&operation=qiand
 const host = 'www.1g31.com' 
 const signinfo = {}
 
-var data_json = chavy.getdata(cookieName + '_header')
-if (!data_json){
+var header_json = chavy.getdata(cookieName + '_header')
+var body_json = chavy.getdata(cookieName + '_body')
+if (!header_json){
     chavy.log(`🔔 ${cookieName} 请获取Cookie后执行`)
     chavy.done()
 }
-var data = JSON.parse(data_json);
+var header_data = JSON.parse(header_json);
+var body_data = JSON.parse(body_json);
 ;(exec = async () => {
     chavy.log(`🔔 ${cookieName} 开始签到`)
     await signapp()
@@ -18,13 +20,14 @@ var data = JSON.parse(data_json);
 })().catch((e) => chavy.log(`❌ ${cookieName} 签到失败: ${e}`), chavy.done())
 
 
+
 function signapp() {
     return new Promise((resolve, reject) => {
         const request = {
             url: url,
-            headers: data,
+            headers: header_data,
             body: {
-                formhash: '460853b0',
+                formhash: body_data['formhash'],
                 qdxq: 'shuai',
                 qdmode: 1,
                 todaysay: '我来签到啦！！！',

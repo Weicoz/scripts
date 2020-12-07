@@ -2,19 +2,34 @@
 // 2 1,12 * * * https://raw.githubusercontent.com/Weicoz/scripts/master/quantumult/91wii/91wii.js, tag=91wii签到, enabled=true
 const cookieName = '91wii'
 const chavy = init()
-const param = ['Cookie'];
-const data = {};
-var data_json = '';
-for (var item in param){
-    if ($request.headers[param[item]]){
-        data[param[item]] = $request.headers[param[item]]
+const header_param = ['Cookie'];
+const body_param = ['formhash'];
+const header = {};
+var header_json = '';
+var body_json = '';
+for (var item in header_param){
+    if ($request.headers[header_param[item]]){
+        header[header_param[item]] = $request.headers[header_param[item]]
     }
 }
-var data_json = JSON.stringify(data);
-if (data_json) {
-    if (chavy.setdata(data_json, cookieName + '_header')) {
+var header_json = JSON.stringify(header);
+if (header_json) {
+    if (chavy.setdata(header_json, cookieName + '_header')) {
         chavy.msg(`${cookieName}`, '获取Cookie成功', '')
-        chavy.log(`[${cookieName}] 获取Cookie: 成功 ${data_json}`)
+        chavy.log(`[${cookieName}] 获取Cookie: 成功 ${header_json}`)
+    }
+}
+
+for (var item in body_param){
+    if ($request.headers[body_param[item]]){
+        header[body_param[item]] = $request.headers[body_param[item]]
+    }
+}
+var body_json = JSON.stringify(body);
+if (body_json) {
+    if (chavy.setdata(body_json, cookieName + '_header')) {
+        chavy.msg(`${cookieName}`, '获取body成功', '')
+        chavy.log(`[${cookieName}] 获取body: 成功 ${body_json}`)
     }
 }
 

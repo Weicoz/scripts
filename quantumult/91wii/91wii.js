@@ -4,12 +4,14 @@ const url = 'https://www.91wii.com/plugin.php?id=dc_signin:sign&inajax=1'
 const host = 'www.91wii.com' 
 const signinfo = {}
 
-var data_json = chavy.getdata(cookieName + '_header')
-if (!data_json){
+var header_json = chavy.getdata(cookieName + '_header')
+var body_json = chavy.getdata(cookieName + '_body')
+if (!header_json){
     chavy.log(`🔔 ${cookieName} 请获取Cookie后执行`)
     chavy.done()
 }
-var data = JSON.parse(data_json);
+var header_data = JSON.parse(header_json);
+var body_data = JSON.parse(body_json);
 ;(exec = async () => {
     chavy.log(`🔔 ${cookieName} 开始签到`)
     await signapp()
@@ -22,9 +24,9 @@ function signapp() {
     return new Promise((resolve, reject) => {
         const request = {
             url: url,
-            headers: data,
+            headers: header_data,
             body: {
-                formhash: '1c7af356',
+                formhash: body_data['formhash'],
                 signsubmit: 'yes',
                 handlekey: 'signin',
                 emotid: 8,
