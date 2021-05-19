@@ -14,12 +14,26 @@
         "id": "zqcard",
         "val": "false",
         "name": "早起打卡开关",
-        "type": "boolean",
-        "desc": "早起打卡开关"
+        "type": "radios",
+        "items": [{
+            "key": "false",
+            "label": "关"
+          },
+          {
+            "key": "true",
+            "label": "开"
+          }
+        ]
       }, {
         "id": "zqtime",
         "name": "打卡时间(h)",
-        "val": "5",
+        "val": 5,
+        "type": "number",
+        "desc": "小时"
+      }, , {
+        "id": "notifytimes",
+        "name": "通知间隔",
+        "val": 50,
         "type": "number",
         "desc": "小时"
       }],
