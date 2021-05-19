@@ -7,7 +7,7 @@
   "apps": [{
       "id": "youth",
       "name": "中青阅读",
-      "keys": ["youthheader_zq", "read_zq", "readtime_zq", "youthheader_zq2", "read_zq2", "readtime_zq2", "youthheader_zq3", "read_zq3", "readtime_zq3", "youthheader_zq4", "read_zq4", "readtime_zq4"],
+      "keys": ["zqcard", "zqtime", "notifytimes"],
       "descs_html": [],
       "author": "@weicoz",
       "settings": [{
