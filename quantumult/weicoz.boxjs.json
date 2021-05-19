@@ -1,0 +1,31 @@
+{
+  "id": "weicoz.script.sub",
+  "name": "weicoz 自用脚本订阅",
+  "author": "@weicoz",
+  "icon": "https://avatars.githubusercontent.com/u/13825284?s=60&v=4",
+  "repo": "https://github.com/weicoz",
+  "apps": [{
+      "id": "youth",
+      "name": "中青阅读",
+      "keys": ["youthheader_zq", "read_zq", "readtime_zq", "youthheader_zq2", "read_zq2", "readtime_zq2", "youthheader_zq3", "read_zq3", "readtime_zq3", "youthheader_zq4", "read_zq4", "readtime_zq4"],
+      "descs_html": [],
+      "author": "@weicoz",
+      "settings": [{
+        "id": "zqcard",
+        "val": "false",
+        "name": "早起打卡开关",
+        "type": "boolean",
+        "desc": "早起打卡开关"
+      }, {
+        "id": "zqtime",
+        "name": "打卡时间(h)",
+        "val": "5",
+        "type": "number",
+        "desc": "小时"
+      }],
+      "repo": "https://github.com/ztxtop/x/blob/main/youth.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/youth.png", "https://raw.githubusercontent.com/Orz-3/mini/master/Color/youth.png"],
+      "script": "https://raw.githubusercontent.com/ztxtop/x/main/youth.js"
+    }
+  ]
+}
