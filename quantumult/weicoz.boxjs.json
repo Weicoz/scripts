@@ -35,7 +35,7 @@
         "name": "通知间隔",
         "val": 50,
         "type": "number",
-        "desc": "小时"
+        "desc": "次数"
       }],
       "repo": "https://github.com/ztxtop/x/blob/main/youth.js",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/youth.png", "https://raw.githubusercontent.com/Orz-3/mini/master/Color/youth.png"],
