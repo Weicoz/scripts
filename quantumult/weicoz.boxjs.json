@@ -30,7 +30,7 @@
         "val": 5,
         "type": "number",
         "desc": "小时"
-      }, , {
+      }, {
         "id": "notifytimes",
         "name": "通知间隔",
         "val": 50,
